@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace OnePiece
 {
-    public interface IMove
+    public interface IMoveForward
     {
-        public void Move();
+        public void MoveForward();
     }
 }

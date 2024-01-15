@@ -9,8 +9,8 @@ namespace OnePiece
 {
     public class PirateTeam : Team
     {
-        public IMove Mover { get; set; }
-        public PirateTeam(string name, IMove mover)
+        public IMoveForward Mover { get; set; }
+        public PirateTeam(string name, IMoveForward mover)
         {
             Name = name;
             Mover = mover;
@@ -24,21 +24,21 @@ namespace OnePiece
 
         public void Move()
         {
-            Mover.Move();
+            Mover.MoveForward();
         }
     }
 
-    public class OnePieceMover : IMove
+    public class OnePieceMover : IMoveForward
     {
-        public void Move()
+        public void MoveForward()
         {
             Console.WriteLine("Move towards One Piece!");
         }
     }
 
-    public class FunMover : IMove
+    public class FunMover : IMoveForward
     {
-        public void Move()
+        public void MoveForward()
         {
             Console.WriteLine("Move for fun!");
         }
