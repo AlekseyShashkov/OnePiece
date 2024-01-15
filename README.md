@@ -205,20 +205,6 @@ UML-схема классов выглядит следующим образом
             Console.WriteLine("Catch the pirates!");
         }
     }
-
-    public class Status
-    {
-        public void Print(Team team)
-        {
-            Console.WriteLine($"{team.Name}:");
-
-            foreach (var human in team.Сrew)
-            {
-                Console.WriteLine($"{human.Name}");
-            }
-            Console.WriteLine("");
-        }
-    }
 ```
 <details><summary>Результат работы</summary>  
 <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/1bc15d9f-27b9-44f6-b2ba-39a0fcd9383b" align="left"/> 
@@ -266,5 +252,88 @@ UML-схема классов выглядит следующим образом
 
 📕 [<i>Принцип открытости/закрытости (Open/Closed Principle)</i>](https://metanit.com/sharp/patterns/5.2.php)
 
-<h2 align="center"> OCP</h2>
+<h2 align="center"> LSP</h2>
 
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+Независимо от того, кем ты станешь, у тебя должно быть имя. Поэтому согласно **Принципу подстановки Лисков** добавим проверки не нарушая инварианты:
+
+<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/9bc6b784-f5df-49fb-b949-778759e566b1" align="left"/> 
+
+```csharp
+    public class Human
+    {
+        public string Name { get; protected set; }
+        public bool IsDevilFruit { get; set; }
+
+        public Human(string name, bool isDevilFruit = false)
+        {
+            if (name.Length < 1)
+            {
+                throw new Exception("Human must have a name!");
+            }
+            Name = name;
+            IsDevilFruit = isDevilFruit;
+        }
+
+        public virtual void Action()
+        {
+            Console.WriteLine("Human Action!");
+        }
+    }
+
+    public class Pirate : Human
+    {
+        public ulong Bounty { get; set; }
+
+        public Pirate(string name, ulong bounty, bool isDevilFruit = false) 
+            : base(name, isDevilFruit)
+        {
+            if (name.Length < 1)
+            {
+                throw new Exception("Pirate must have a name!");
+            }
+            Bounty = bounty;
+        }
+
+        public override void Action()
+        {
+            Console.WriteLine("Pirate Action!");
+        }
+    }
+
+    public class Marine : Human
+    {
+        public Personnel Rank { get; set; }
+
+        public Marine(string name, Personnel rank, bool isDevilFruit = false) 
+            : base(name, isDevilFruit)
+        {
+            if (name.Length < 1)
+            {
+                throw new Exception("Marine must have a name!");
+            }
+            Rank = rank;
+        }
+
+        public override void Action()
+        {
+            Console.WriteLine("Marine Action!");
+        }
+    }
+
+    public enum Personnel : byte
+    {
+        FleetAdmiral,
+        Admiral,
+        ViceAdmiral,
+        RearAdmiral,
+        Captain
+    }
+```
+
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+Результат работы и UML-схема классов останутся прежними.
+
+📔 [<i>Принцип подстановки Лисков (Liskov Substitution Principle)</i>](https://metanit.com/sharp/patterns/5.3.php)
+
+<h2 align="center"> ISP</h2>
