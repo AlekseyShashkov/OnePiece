@@ -1,19 +1,19 @@
 <div id="header" align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/845309f0-e503-4f94-a846-125f5dba6780" height="300px" alt="Pokemon Logo"/>
+  <img src="img/OnePiece/Logo.png" height="300px" alt="One Piece Logo"/>
 </div>
 
 <h1 align="center"> Применим принципы SOLID чтобы открыть <br/>⚓ Великую Эру Пиратов! ⚓</h1>
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/2f45d900-8fb1-453a-9925-d77c99359daa"/>
+  <img src="img/OnePiece/Piracy.gif"/>
 </p>
 
 <h2 align="center">🌊 SRP 🌊</h2>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 Вначале опишим класс `Pirate` и создадим пиратскую команду `PirateTeam` которая совершает пиратские дела, а операцию вывода статистической информации
 согласно **Принципу единственной обязанности** вынесем в отдельный класс `Status`:<br/>
  
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/e82663e4-4cc8-4d9c-a30f-31dfc26d73b1" align="left"/> 
+<img src="img/SOLID/SRP.jpg" align="left"/> 
 
 ```csharp
     public class Pirate(string name, ulong bounty, bool isDevilFruit = false)
@@ -65,7 +65,7 @@
 ```
 
 <details><summary>Результат работы</summary>  
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/97a3a139-393e-449d-985c-71567cb11b05" align="left"/> 
+<img src="img/result/Result1.jpg" align="left"/> 
 
 ```csharp
     public class MainClass
@@ -98,21 +98,21 @@
 ```
 </details>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/6530cbf0-8dec-41c9-a51e-650cfca09f56" width="50%"/>
+  <img src="img/diagrams/UML_SRP.jpg" width="50%"/>
 </p>
 
 📘 [<i>Принцип единственной обязанности (Single Responsibility Principle)</i>](https://metanit.com/sharp/patterns/5.1.php)
 
 <h2 align="center">🌊 OCP 🌊</h2>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 В мире One Piece живут не только пираты, да и пиратом не рождаются, а становятся. Поэтому согласно **Принципу открытости/закрытости** опишим класс `Human`,
 воспользуемся паттерном Шаблонный метод для описания архитектуры команд `Team` и зададим представителей морского дозора в `Marine` и `MarineTeam`:<br/>
 
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/fe0da5b5-c1f8-4fe8-9bce-4b7a580d1666" align="left"/> 
+<img src="img/SOLID/OCP.jpg" align="left"/> 
 
 ```csharp
     public class Human(string name, bool isDevilFruit = false)
@@ -207,7 +207,7 @@ UML-схема классов выглядит следующим образом
 ```
 
 <details><summary>Результат работы</summary>  
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/1bc15d9f-27b9-44f6-b2ba-39a0fcd9383b" align="left"/> 
+<img src="img/result/Result2.jpg" align="left"/> 
 
 ```csharp
     public class MainClass
@@ -243,20 +243,20 @@ UML-схема классов выглядит следующим образом
 ```
 </details>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/351dd4b6-6822-4b5d-9959-dc45b1bfb6a4" />
+  <img src="img/diagrams/UML_OCP.jpg" />
 </p>
 
 📕 [<i>Принцип открытости/закрытости (Open/Closed Principle)</i>](https://metanit.com/sharp/patterns/5.2.php)
 
 <h2 align="center">🌊 LSP 🌊</h2>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 Независимо от того, кем ты станешь, у тебя должно быть имя. Поэтому согласно **Принципу подстановки Лисков** добавим проверки не нарушая инварианты:<br/>
 
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/9bc6b784-f5df-49fb-b949-778759e566b1" align="left"/> 
+<img src="img/SOLID/LSP.jpg" align="left"/> 
 
 ```csharp
     public class Human
@@ -330,18 +330,18 @@ UML-схема классов выглядит следующим образом
     }
 ```
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов останется прежней.
 
 📔 [<i>Принцип подстановки Лисков (Liskov Substitution Principle)</i>](https://metanit.com/sharp/patterns/5.3.php)
 
 <h2 align="center">🌊 ISP 🌊</h2>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 Каждый, кто отправился в море, начинает своё собственное приключение и ставит перед собой определённую цель. Приключение может быть одно, а вот цели
 могут отличаться. Благодаря **Принципу разделения интерфейсов** покажем это через интерфейсы `IAdventure`, `IJustice` и `IBecomePirateKing`:<br/>
 
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/03173c2e-1739-4be4-8bf7-987788ffc338" align="left"/> 
+<img src="img/SOLID/ISP.jpg" align="left"/> 
 
 ```csharp
     public interface IAdventure
@@ -360,21 +360,21 @@ UML-схема классов останется прежней.
     }
 ```
 <br/><br/><br/><br/><br/><br/>
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/bd3916bd-d8d4-4111-9873-ff662d692b68"/>
+  <img src="img/diagrams/UML_ISP.jpg"/>
 </p>
 
 📙 [<i>Принцип разделения интерфейсов (Interface Segregation Principle)</i>](https://metanit.com/sharp/patterns/5.4.php)
 
 <h2 align="center">🌊 DIP 🌊</h2>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 Будни пирата - процесс не рутинный. Покажем это с помощью **Принципа инверсии зависимостей**, интерфейса `IMoveForward`, классов 
 `OnePieceMover` и `FunMover`:<br/>
 
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/3bf31638-ab7b-4741-855d-a39502d3d17c" align="left"/> 
+<img src="img/SOLID/DIP.jpg" align="left"/> 
 
 ```csharp
     public interface IMoveForward
@@ -400,7 +400,7 @@ UML-схема классов выглядит следующим образом
 ```
 <br/>
 <details><summary>Результат работы</summary>  
-<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/64b5d2a5-db7e-472d-b70a-fce1a2cac538" align="left"/> 
+<img src="img/result/Result3.jpg" align="left"/> 
 
 ```csharp
     public class MainClass
@@ -438,15 +438,18 @@ UML-схема классов выглядит следующим образом
 ```
 </details>
 
-&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ee714087-eeae-4704-aadd-eb20b01df0b1"/>
+  <img src="img/diagrams/UML_DIP.jpg"/>
 </p>
 
 📗 [<i>Принцип инверсии зависимостей (Dependency Inversion Principle)</i>](https://metanit.com/sharp/patterns/5.5.php)
 <hr/>
 
+&nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
+Финальный результат [<i>"Одним Куском"</i>](doc/code.md)
+
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ff2e8bc6-10ea-4862-90ad-d7a53f1d5aeb"/>
+  <img src="img/OnePiece/ToBeContinued.jpg"/>
 </p>
