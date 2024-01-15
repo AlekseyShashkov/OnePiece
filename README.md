@@ -11,7 +11,7 @@
 
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
 Вначале опишим класс `Pirate` и создадим пиратскую команду `PirateTeam` которая совершает пиратские дела, а операцию вывода статистической информации
-согласно **Принципу единственной обязанности** мы вынесем в отдельный класс `Status`:<br/>
+согласно **Принципу единственной обязанности** вынесем в отдельный класс `Status`:<br/>
  
 <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/e82663e4-4cc8-4d9c-a30f-31dfc26d73b1" align="left"/> 
 
@@ -102,7 +102,7 @@
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/6530cbf0-8dec-41c9-a51e-650cfca09f56" width="40%"/>
+  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/6530cbf0-8dec-41c9-a51e-650cfca09f56" width="50%"/>
 </p>
 
 📘 [<i>Принцип единственной обязанности (Single Responsibility Principle)</i>](https://metanit.com/sharp/patterns/5.1.php)
@@ -247,7 +247,7 @@ UML-схема классов выглядит следующим образом
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/351dd4b6-6822-4b5d-9959-dc45b1bfb6a4" width="80%"/>
+  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/351dd4b6-6822-4b5d-9959-dc45b1bfb6a4" />
 </p>
 
 📕 [<i>Принцип открытости/закрытости (Open/Closed Principle)</i>](https://metanit.com/sharp/patterns/5.2.php)
@@ -255,7 +255,7 @@ UML-схема классов выглядит следующим образом
 <h2 align="center"> LSP</h2>
 
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
-Независимо от того, кем ты станешь, у тебя должно быть имя. Поэтому согласно **Принципу подстановки Лисков** добавим проверки не нарушая инварианты:
+Независимо от того, кем ты станешь, у тебя должно быть имя. Поэтому согласно **Принципу подстановки Лисков** добавим проверки не нарушая инварианты:<br/>
 
 <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/9bc6b784-f5df-49fb-b949-778759e566b1" align="left"/> 
 
@@ -332,8 +332,74 @@ UML-схема классов выглядит следующим образом
 ```
 
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
-Результат работы и UML-схема классов останутся прежними.
+UML-схема классов останется прежней.
 
 📔 [<i>Принцип подстановки Лисков (Liskov Substitution Principle)</i>](https://metanit.com/sharp/patterns/5.3.php)
 
 <h2 align="center"> ISP</h2>
+
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+Каждый, кто отправился в море, начинает своё собственное приключение и ставит перед собой определённую цель. Приключение может быть одно, а вот цели
+могут отличаться. Благодаря **Принципу разделения интерфейсов** покажем это через интерфейсы `IAdventure`, `IJustice` и `IBecomePirateKing`:<br/>
+
+<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/03173c2e-1739-4be4-8bf7-987788ffc338" align="left"/> 
+
+```csharp
+    public interface IAdventure
+    {
+        public void Adventure();
+    }
+
+    public interface IJustice : IAdventure
+    {
+        public bool IsJustice { get; set; }
+    }
+
+    public interface IBecomePirateKing : IAdventure
+    {
+        public bool BecomePirateKing { get; set; }
+    }
+```
+<br/><br/><br/><br/><br/><br/>
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+UML-схема классов выглядит следующим образом:
+<p align="center">
+  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/bd3916bd-d8d4-4111-9873-ff662d692b68"/>
+</p>
+
+📙 [<i>Принцип разделения интерфейсов (Interface Segregation Principle)</i>](https://metanit.com/sharp/patterns/5.4.php)
+
+<h2 align="center"> DIP</h2>
+
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+Будни пирата - процесс не рутинный. Покажем это с помощью **Принципа инверсии зависимостей**, интерфейса `IMoveForward`, классов 
+`OnePieceMover` и `FunMover`:<br/>
+
+<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/3bf31638-ab7b-4741-855d-a39502d3d17c" align="left"/> 
+
+```csharp
+    public interface IMoveForward
+    {
+        public void MoveForward();
+    }
+
+    public class OnePieceMover : IMoveForward
+    {
+        public void MoveForward()
+        {
+            Console.WriteLine("Move towards One Piece!");
+        }
+    }
+
+    public class FunMover : IMoveForward
+    {
+        public void MoveForward()
+        {
+            Console.WriteLine("Move for fun!");
+        }
+    }
+```
+
+
+![UML-DIP](https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ee714087-eeae-4704-aadd-eb20b01df0b1)
+
