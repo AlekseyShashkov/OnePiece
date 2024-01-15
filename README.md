@@ -441,7 +441,7 @@ UML-схема классов выглядит следующим образом
 &nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="img/diagrams/UML_DIP.jpg/>
+  <img src="img/diagrams/UML_DIP.jpg"/>
 </p>
 
 📗 [<i>Принцип инверсии зависимостей (Dependency Inversion Principle)</i>](https://metanit.com/sharp/patterns/5.5.php)
