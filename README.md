@@ -97,7 +97,6 @@
     }
 ```
 </details>
-<hr/>
 
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
@@ -206,6 +205,7 @@ UML-схема классов выглядит следующим образом
         }
     }
 ```
+
 <details><summary>Результат работы</summary>  
 <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/1bc15d9f-27b9-44f6-b2ba-39a0fcd9383b" align="left"/> 
 
@@ -242,7 +242,6 @@ UML-схема классов выглядит следующим образом
     }
 ```
 </details>
-<hr/>
 
 &nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
@@ -399,7 +398,55 @@ UML-схема классов выглядит следующим образом
         }
     }
 ```
+<br/>
+<details><summary>Результат работы</summary>  
+<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/64b5d2a5-db7e-472d-b70a-fce1a2cac538" align="left"/> 
 
+```csharp
+    public class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            MarineTeam marines = new("Marines");
+            marines.Invite(new Marine("Sakazuki", Personnel.FleetAdmiral, true));
+            marines.Invite(new Marine("Kizaru", Personnel.Admiral, true));
+            marines.Invite(new Marine("Monkey D. Garp", Personnel.ViceAdmiral));
+            marines.Invite(new Marine("Momonga", Personnel.ViceAdmiral));
+            marines.Invite(new Marine("Hina", Personnel.RearAdmiral));
+            marines.Invite(new Marine("Tashigi", Personnel.Captain));
 
-![UML-DIP](https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ee714087-eeae-4704-aadd-eb20b01df0b1)
+            PirateTeam strawHats = new("Straw Hat Pirates", new FunMover());
+            strawHats.Invite(new Pirate("Monkey D. Luffy", 3000000000L, true));
+            strawHats.Invite(new Pirate("Roronoa Zoro", 1111000000L));
+            strawHats.Invite(new Pirate("Nami", 366000000L));
+            strawHats.Invite(new Pirate("God Usopp", 500000000L));
+            strawHats.Invite(new Pirate("Sanji", 1032000000L));
+            strawHats.Invite(new Pirate("Tony Tony Chopper", 1000L, true));
+            strawHats.Invite(new Pirate("Nico Robin", 930000000L, true));
+            strawHats.Invite(new Pirate("Franky", 394000000L));
+            strawHats.Invite(new Pirate("Brook", 383000000L, true));
 
+            Status status = new();
+            status.Print(marines);
+            status.Print(strawHats);
+
+            strawHats.Move();
+            strawHats.Mover = new OnePieceMover();
+            strawHats.Move();
+        }
+    }
+```
+</details>
+
+&nbsp;&nbsp;<img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/788002c4-4912-43bd-8ed0-570f13ba5405" height="35px"/>&nbsp;&nbsp;
+UML-схема классов выглядит следующим образом:
+<p align="center">
+  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ee714087-eeae-4704-aadd-eb20b01df0b1"/>
+</p>
+
+📗 [<i>Принцип инверсии зависимостей (Dependency Inversion Principle)</i>](https://metanit.com/sharp/patterns/5.5.php)
+<hr/>
+
+<p align="center">
+  <img src="https://github.com/AlekseyShashkov/OnePiece/assets/17510024/ff2e8bc6-10ea-4862-90ad-d7a53f1d5aeb"/>
+</p>
