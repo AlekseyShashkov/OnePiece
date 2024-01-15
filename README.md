@@ -101,7 +101,7 @@
 &nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="img/diagrams/UML_SRP.jpg" width="50%"/>
+  <img src="img/diagrams/UML-SRP.jpg" width="50%"/>
 </p>
 
 📘 [<i>Принцип единственной обязанности (Single Responsibility Principle)</i>](https://metanit.com/sharp/patterns/5.1.php)
@@ -246,7 +246,7 @@ UML-схема классов выглядит следующим образом
 &nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="img/diagrams/UML_OCP.jpg" />
+  <img src="img/diagrams/UML-OCP.jpg" />
 </p>
 
 📕 [<i>Принцип открытости/закрытости (Open/Closed Principle)</i>](https://metanit.com/sharp/patterns/5.2.php)
@@ -363,7 +363,7 @@ UML-схема классов останется прежней.
 &nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="img/diagrams/UML_ISP.jpg"/>
+  <img src="img/diagrams/UML-ISP.jpg"/>
 </p>
 
 📙 [<i>Принцип разделения интерфейсов (Interface Segregation Principle)</i>](https://metanit.com/sharp/patterns/5.4.php)
@@ -441,7 +441,7 @@ UML-схема классов выглядит следующим образом
 &nbsp;&nbsp;<img src="img/OnePiece/JollyRoger.png" height="35px"/>&nbsp;&nbsp;
 UML-схема классов выглядит следующим образом:
 <p align="center">
-  <img src="img/diagrams/UML_DIP.jpg"/>
+  <img src="img/diagrams/UML-DIP.jpg"/>
 </p>
 
 📗 [<i>Принцип инверсии зависимостей (Dependency Inversion Principle)</i>](https://metanit.com/sharp/patterns/5.5.php)
